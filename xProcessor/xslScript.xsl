@@ -39,7 +39,7 @@
 <!-- <xsl:template match="Mobile-MSISDN/@BirthDate[.='1969-06-24T00:00:00']"> -->
 <xsl:template match="@BirthDate">
   <xsl:attribute name="BirthDate">
-    <xsl:value-of select="concat(concat(concat(concat(19,substring($pBirthDate,1,2)),-substring($pBirthDate,3,2)),-substring($pBirthDate,5,2)),'T00:00:00')"/>
+    <xsl:value-of select="concat('19',substring($pBirthDate,1,2),'-',substring($pBirthDate,3,2),'-',substring($pBirthDate,5,2),'T00:00:00')"/>
   </xsl:attribute>
  </xsl:template>
 
