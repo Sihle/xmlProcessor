@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -22,9 +20,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.xml.sax.SAXException;
-
-import com.sun.java_cup.internal.parse_action;
-import com.sun.org.apache.xerces.internal.impl.dv.ValidatedInfo;
 
 public class ReadExcelDemo {
 	static int count;
@@ -93,8 +88,8 @@ public class ReadExcelDemo {
 
 	// Parse each XML file.
 	static void parse(String vBirthDate, String vSIMCardNumber, String xmlName)
-	throws TransformerException, TransformerConfigurationException,
-	FileNotFoundException, IOException {
+			throws TransformerException, TransformerConfigurationException,
+			FileNotFoundException, IOException {
 		// Use the static TransformerFactory.newInstance() method to instantiate
 		// a TransformerFactory. The javax.xml.transform.TransformerFactory
 		// system property setting determines the actual class to instantiate --
@@ -107,7 +102,7 @@ public class ReadExcelDemo {
 		// stylesheet
 		// into a compiled Templates object.
 		Transformer transformer = tFactory.newTransformer(new StreamSource(
-		"xslScript.xsl"));
+				"xslScript.xsl"));
 
 		// Set the parameter. I can't get non-null namespaces to work!!
 		transformer.setParameter("pBirthDate", /* parameter name */
@@ -119,8 +114,8 @@ public class ReadExcelDemo {
 		// (./in/foo.xml) and write the output to a file (./out/foo.xml).
 		transformer.transform(new StreamSource(System.getProperty("user.dir")
 				+ "\\in\\" + xmlName + ".xml"), new StreamResult(
-						new FileOutputStream(System.getProperty("user.dir") + "\\out\\"
-								+ xmlName + ".xml")));
+				new FileOutputStream(System.getProperty("user.dir") + "\\out\\"
+						+ xmlName + ".xml")));
 
 		System.out.println("************* The result is in "
 				+ System.getProperty("user.dir") + "\\out\\" + xmlName + ".xml"

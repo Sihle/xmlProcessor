@@ -32,10 +32,6 @@
     </xsl:copy>
 </xsl:template>
 
-<!-- <xsl:template match="Class/Order/Family/Species[@Scientific_Name='Nothocercus']">
-<Species Scientific_Name="Nothocercus">Sihle Mchunu.</Species>
-</xsl:template> -->
-
 <!-- <xsl:template match="Mobile-MSISDN/@BirthDate[.='1969-06-24T00:00:00']"> -->
 <xsl:template match="@BirthDate">
   <xsl:attribute name="BirthDate">
